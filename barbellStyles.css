@@ -1,0 +1,61 @@
+body {
+    background: #22c1c3;
+}
+
+.flex-container {
+    
+    display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 0;
+	margin-left: 10%;
+	margin-right: 10%;
+	background: #fdbb2d;
+	align-self: center;
+
+}
+
+
+#weightInput{
+	border: none;
+	background-color: transparent;
+	font: bold 55px Poppins, sans-serif;
+	text-align: center;
+-webkit-text-fill-color: #B0E0E6;
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: black;
+
+
+
+}
+
+#weightInput:focus{
+	outline: none;
+}
+
+
+/*removes the arrows from the input field*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/******************************************/
+
+#inputButton{
+width: 50%;
+margin-right: auto;
+margin-left: auto;
+padding: 1%;
+}
+
+#drawPlates{
+height: 70%;
+width: 70%;
+padding: 2%;
+margin-right: auto;
+margin-left: auto;
+
+}
