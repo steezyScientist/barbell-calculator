@@ -20,9 +20,6 @@
         }
 
 		.background-yellow{
-			position: absolute;
-            width: 95vw;
-            height: 95%;
             background-color: #d6ff20;
 			z-index: -1;
 		}
