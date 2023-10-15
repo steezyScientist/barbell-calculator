@@ -29,6 +29,11 @@
 			z-index: -1;
 		}
 
+		.arnold-bitmap{
+			position: absolute;
+			right: 17%;
+			bottom: 5%;
+		}
 
         .image {
             max-width: 100%;
