@@ -9,9 +9,6 @@ function setupClickEvent(elementId, weightNumber) {
 
       weightAvailable.add(weightNumber);
   
-      //sort array for main algo to parse through
-      weightAvailable.sort((a, b) => b - a);
-
       //update local storage of weights
       localStorage.setItem('weightAvailable', JSON.stringify(weightAvailable));
       const weightChangeEvent = new Event('weightChange');
