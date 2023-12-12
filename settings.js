@@ -25,8 +25,6 @@ function setupClickEvent(elementId, weightNumber) {
       localStorage.setItem('weightAvailable', JSON.stringify(weightAvailable));
       const weightChangeEvent = new Event('weightChange');
       document.dispatchEvent(weightChangeEvent);
-
-      window.onload=printWeightArray;
     });
     
       // Log the updated array to the console (DEBUG)
@@ -36,6 +34,11 @@ function setupClickEvent(elementId, weightNumber) {
 function clearWeightArray(){
   let weightAvailable = JSON.parse(localStorage.getItem('weightAvailable')) || [];
   weightAvailable.length = 0;
+
+  localStorage.setItem('weightAvailable', JSON.stringify(weightAvailable));
+  const weightChangeEvent = new Event('weightChange');
+  document.dispatchEvent(weightChangeEvent);
+
   console.log(weightAvailable);
 
 }
