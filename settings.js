@@ -4,23 +4,15 @@ function setupClickEvent(elementId, weightNumber) {
 
     const weightImage = document.getElementById(elementId);
 
-    function doesArrayContainNumber(weightAvailable, weightNumber) {
-      return weightAvailable.includes(weightNumber);
-    }
-
     // Add a click event listener to the image
     weightImage.addEventListener('click', function() {
-      // Add the number to the array
-      //check if the weight is already in, if so do nothing; just print array to log. 
-      if (doesArrayContainNumber(weightAvailable, weightNumber)) {
-        console.log(weightAvailable);
-      } else {
-        weightAvailable = weightAvailable.concat(weightNumber);
-      }
+
+      weightAvailable = weightAvailable.concat(weightNumber);
   
       //sort array for main algo to parse through
       weightAvailable.sort((a, b) => b - a);
-      //update local storage of weights in cookies
+
+      //update local storage of weights
       localStorage.setItem('weightAvailable', JSON.stringify(weightAvailable));
       const weightChangeEvent = new Event('weightChange');
       document.dispatchEvent(weightChangeEvent);
