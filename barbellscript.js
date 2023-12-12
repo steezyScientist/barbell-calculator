@@ -5,7 +5,16 @@
 
 
 //Available plates
-const weightAvailable = [45, 35, 25, 10, 5, 1, 0.5];
+let weightAvailable = JSON.parse(localStorage.getItem('weightAvailable')) || [];
+// Listen for the custom event
+document.addEventListener('weightChange', function() {
+    // Update the array when the event is triggered
+    weightAvailable = JSON.parse(localStorage.getItem('weightAvailable')) || [];
+  
+    // Use the updated array as needed
+    console.log(weightAvailable);
+  });
+
 const barWeight = 45;
 
 //get user input of total weight through the button
@@ -123,5 +132,6 @@ function clearScreen() {
     var ctx = canvas.getContext('2d');
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    console.log(weightAvailable);
 }
 

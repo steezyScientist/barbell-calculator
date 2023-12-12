@@ -24,10 +24,6 @@
 			z-index: -1;
 		}
 
-		.arnold-bitmap{
-			right: 17%;
-			bottom: 5%;
-		}
 
         .image {
             max-width: 100%;
@@ -79,4 +75,3 @@
 			outline: none;
 			margin: 10px;
 		}
-		
