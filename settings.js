@@ -8,18 +8,6 @@ function setupClickEvent(elementId, weightNumber) {
       return weightAvailable.includes(weightNumber);
     }
 
-    function printWeightArray(){
-      // Get the element where you want to display the array content
-      const arrayOutputDiv = document.getElementById('arrayOutput');
-
-      // Create a string representation of the array
-      const arrayContent = printWeightArray.join(', ');
-  
-      // Set the innerHTML of the output div to display the array content
-      arrayOutputDiv.innerHTML = `Array Content: [${weightAvailable}]`;  
-    }
-  
-
     // Add a click event listener to the image
     weightImage.addEventListener('click', function() {
       // Add the number 45 to the array
@@ -38,12 +26,22 @@ function setupClickEvent(elementId, weightNumber) {
       const weightChangeEvent = new Event('weightChange');
       document.dispatchEvent(weightChangeEvent);
 
-      printWeightArray;
-
+      window.onload=printWeightArray;
+    });
+    
       // Log the updated array to the console (DEBUG)
       console.log(weightAvailable);
-    });
 }
+
+function clearWeightArray(){
+  let weightAvailable = JSON.parse(localStorage.getItem('weightAvailable')) || [];
+  weightAvailable.length = 0;
+  console.log(weightAvailable);
+
+}
+const clearButton = getElementById('clearButton');
+clearButton.addEventListener('click', clearWeightArray);
+
 setupClickEvent('45plate', 45);
 setupClickEvent('35plate', 35);
 setupClickEvent('25plate', 25);
