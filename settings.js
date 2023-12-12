@@ -1,6 +1,6 @@
 function setupClickEvent(elementId, weightNumber) {
     // Get the image element by its id
-    let weightAvailable = JSON.parse(localStorage.getItem('weightAvailable')) || [];
+    let weightAvailable = new Set(JSON.parse(localStorage.getItem('weightAvailable'))) || new Set();
 
     const weightImage = document.getElementById(elementId);
 
@@ -10,8 +10,7 @@ function setupClickEvent(elementId, weightNumber) {
 
     // Add a click event listener to the image
     weightImage.addEventListener('click', function() {
-      // Add the number 45 to the array
-
+      // Add the number to the array
       //check if the weight is already in, if so do nothing; just print array to log. 
       if (doesArrayContainNumber(weightAvailable, weightNumber)) {
         console.log(weightAvailable);
@@ -25,10 +24,11 @@ function setupClickEvent(elementId, weightNumber) {
       localStorage.setItem('weightAvailable', JSON.stringify(weightAvailable));
       const weightChangeEvent = new Event('weightChange');
       document.dispatchEvent(weightChangeEvent);
-    });
-    
-      // Log the updated array to the console (DEBUG)
+      
+            // Log the updated array to the console (DEBUG)
+
       console.log(weightAvailable);
+    });
 }
 
 function clearWeightArray(){
@@ -42,7 +42,7 @@ function clearWeightArray(){
   console.log(weightAvailable);
 
 }
-const clearButton = getElementById('clearButton');
+const clearButton = document.getElementById('clearButton');
 clearButton.addEventListener('click', clearWeightArray);
 
 setupClickEvent('45plate', 45);
