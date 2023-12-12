@@ -1,6 +1,6 @@
 function setupClickEvent(elementId, weightNumber) {
     // Get the image element by its id
-    let weightAvailable = new Set(JSON.parse(localStorage.getItem('weightAvailable'))) || new Set();
+    let weightAvailable = JSON.parse(localStorage.getItem('weightAvailable')) || new Set();
 
     const weightImage = document.getElementById(elementId);
 
