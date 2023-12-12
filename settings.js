@@ -1,13 +1,13 @@
 function setupClickEvent(elementId, weightNumber) {
     // Get the image element by its id
-    let weightAvailable = JSON.parse(localStorage.getItem('weightAvailable')) || new Set();
+    let weightAvailable = new Set(JSON.parse(localStorage.getItem('weightAvailable'))) || new Set();
 
     const weightImage = document.getElementById(elementId);
 
     // Add a click event listener to the image
     weightImage.addEventListener('click', function() {
 
-      weightAvailable = weightAvailable.concat(weightNumber);
+      weightAvailable.add(weightNumber);
   
       //sort array for main algo to parse through
       weightAvailable.sort((a, b) => b - a);
