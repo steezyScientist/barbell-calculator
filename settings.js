@@ -1,7 +1,6 @@
-function setupClickEvent(elementId, weightNumber) {
-    // Get the image element by its id
-    let weightAvailable = new Set(JSON.parse(localStorage.getItem('weightAvailable'))) || new Set();
+let weightAvailable = new Set(JSON.parse(localStorage.getItem('weightAvailable'))) || new Set();
 
+function setupClickEvent(elementId, weightNumber) {
     const weightImage = document.getElementById(elementId);
 
     // Add a click event listener to the image
@@ -20,8 +19,8 @@ function setupClickEvent(elementId, weightNumber) {
     });
 }
 
-function clearWeightArray(){
-  let weightAvailable = JSON.parse(localStorage.getItem('weightAvailable')) || [];
+function clearWeightArray(weightAvailable){
+  
   console.log(weightAvailable);
   weightAvailable.length = 0;
 
@@ -33,7 +32,7 @@ function clearWeightArray(){
 
 }
 const clearButton = document.getElementById('clearButton');
-clearButton.addEventListener('click', clearWeightArray);
+clearButton.addEventListener('click', clearWeightArray(weightAvailable));
 
 setupClickEvent('45plate', 45);
 setupClickEvent('35plate', 35);
