@@ -25,6 +25,7 @@ function setupClickEvent(elementId, weightNumber) {
 
 function clearWeightArray(){
   let weightAvailable = JSON.parse(localStorage.getItem('weightAvailable')) || [];
+  console.log(weightAvailable);
   weightAvailable.length = 0;
 
   localStorage.setItem('weightAvailable', JSON.stringify(weightAvailable));
