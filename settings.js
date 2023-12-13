@@ -1,44 +1,23 @@
-let weightAvailable = new Set(JSON.parse(localStorage.getItem('weightAvailable'))) || new Set();
+var weightAvailable = JSON.parse(localStorage.getItem('MyWeightsAvailable')) || [];
 
 function setupClickEvent(elementId, weightNumber) {
-    const weightImage = document.getElementById(elementId);
+  // Get the image element by its id
+  const weightImage = document.getElementById(elementId);
 
-    // Add a click event listener to the image
-    weightImage.addEventListener('click', function() {
+  // Add a click event listener to the image
+  weightImage.addEventListener('click', function() {
 
-      weightAvailable.add(weightNumber);
-  
-      //update local storage of weights
-      localStorage.setItem('weightAvailable', JSON.stringify(weightAvailable));
-      const weightChangeEvent = new Event('weightChange');
-      document.dispatchEvent(weightChangeEvent);
-      
-            // Log the updated array to the console (DEBUG)
+    weightAvailable.push(weightNumber);
 
-      console.log(weightAvailable);
-    });
+    //update local storage of weights
+    localStorage.setItem('MyWeightsAvailable', JSON.stringify(weightAvailable));
+    const weightChangeEvent = new Event('weightChange');
+    document.dispatchEvent(weightChangeEvent);
+    
+          // Log the updated array to the console (DEBUG)
+
+    console.log(weightAvailable);
+  });
 }
-
-function clearWeightArray(weightAvailable){
-  
-  console.log(weightAvailable);
-  weightAvailable.length = 0;
-
-  localStorage.setItem('weightAvailable', JSON.stringify(weightAvailable));
-  const weightChangeEvent = new Event('weightChange');
-  document.dispatchEvent(weightChangeEvent);
-
-  console.log(weightAvailable);
-
-}
-const clearButton = document.getElementById('clearButton');
-clearButton.addEventListener('click', clearWeightArray(weightAvailable));
 
 setupClickEvent('45plate', 45);
-setupClickEvent('35plate', 35);
-setupClickEvent('25plate', 25);
-setupClickEvent('10plate', 10);
-setupClickEvent('5plate', 5);
-setupClickEvent('1plate', 1);
-setupClickEvent('0.5plate', 0.5);
-
