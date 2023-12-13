@@ -13,6 +13,9 @@ function setupClickEvent(elementId, weightNumber) {
       weightAvailable.push(weightNumber);
     }
     
+    weightAvailable.sort(function (a, b){
+      return b - a;
+    });
 
     //update local storage of weights
     localStorage.setItem('MyWeightsAvailable', JSON.stringify(weightAvailable));
@@ -24,6 +27,26 @@ function setupClickEvent(elementId, weightNumber) {
     console.log(weightAvailable);
   });
 }
+
+document.addEventListener('weightChange', function() {
+  // Update the array when the event is triggered
+  weightAvailable = JSON.parse(localStorage.getItem('MyWeightsAvailable')) || [];
+
+  var outputDiv = document.getElementById('arrayOutput');
+  outputDiv.innerHTML = '<p>Weights: ' + weightAvailable.join(' ') + '</p>';
+});
+
+function clearWeights(){
+  weightAvailable = JSON.parse(localStorage.getItem('MyWeightsAvailable')) || [];
+  weightAvailable.length = 0;
+  localStorage.setItem('MyWeightsAvailable', JSON.stringify(weightAvailable));
+  const weightChangeEvent = new Event('weightChange');
+  document.dispatchEvent(weightChangeEvent);
+}
+
+const clearButton = document.getElementById('clearButton');
+clearButton.addEventListener('click', clearWeights);
+
 
 setupClickEvent('45plate', 45);
 setupClickEvent('35plate', 35);
