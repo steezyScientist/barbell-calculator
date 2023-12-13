@@ -6,8 +6,6 @@
 
 //Available plates
 
-var weightAvailable = [];
-localStorage.setItem('MyWeightsAvailable', JSON.stringify(weightAvailable));
 
 // Listen for the custom event
 document.addEventListener('weightChange', function() {
