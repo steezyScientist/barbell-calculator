@@ -11,15 +11,6 @@ var weightAvailable = JSON.parse(localStorage.getItem('MyWeightsAvailable')) || 
 document.addEventListener('weightChange', function() {
     // Update the array when the event is triggered
     weightAvailable = JSON.parse(localStorage.getItem('MyWeightsAvailable')) || [];
-
-    //sort
-    weightAvailable.sort(function (a, b){
-        b - a;
-    });
-  
-    //remove duplicates
-
-
     // Use the updated array as needed
     console.log(weightAvailable);
   });
