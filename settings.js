@@ -7,7 +7,12 @@ function setupClickEvent(elementId, weightNumber) {
   // Add a click event listener to the image
   weightImage.addEventListener('click', function() {
 
-    weightAvailable.push(weightNumber);
+    if(weightAvailable.includes(weightNumber)){
+      //do nothing
+    }else{
+      weightAvailable.push(weightNumber);
+    }
+    
 
     //update local storage of weights
     localStorage.setItem('MyWeightsAvailable', JSON.stringify(weightAvailable));
