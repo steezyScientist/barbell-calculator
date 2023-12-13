@@ -21,3 +21,11 @@ function setupClickEvent(elementId, weightNumber) {
 }
 
 setupClickEvent('45plate', 45);
+setupClickEvent('35plate', 35);
+setupClickEvent('25plate', 25);
+setupClickEvent('10plate', 10);
+setupClickEvent('5plate', 5);
+setupClickEvent('1plate', 1);
+setupClickEvent('0.5plate', 0.5);
+
+
