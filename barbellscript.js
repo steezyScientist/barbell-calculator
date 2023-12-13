@@ -12,7 +12,7 @@ localStorage.setItem('MyWeightsAvailable', JSON.stringify(weightAvailable));
 // Listen for the custom event
 document.addEventListener('weightChange', function() {
     // Update the array when the event is triggered
-    weightAvailable = JSON.parse(localStorage.getItem('weightAvailable')) || [];
+    weightAvailable = JSON.parse(localStorage.getItem('MyWeightsAvailable')) || [];
   
     // Use the updated array as needed
     console.log(weightAvailable);
