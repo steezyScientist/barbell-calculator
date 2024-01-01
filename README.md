@@ -11,15 +11,14 @@ show you which weights are needed on each side to meet the target weight.
 #### Font: Pixel NES © (Neale Davidson)
 
 ##### To Do:
-###### -Add settings menu to change which plates the user has.
+###### (Completed version 1) -Add settings menu to change which plates the user has.
 ###### -Add background effects 
+
+
+### Version 2
+![Screenshot](V2-Demo.png)
 
 ### Version 1:
 ![Screenshot](OLD1.png)
 ![Screenshot](OLD2.png)
 ![Screenshot](OLD3.png)
-
-### Version 2
-![Screenshot](V2-Demo.png)
-
-
